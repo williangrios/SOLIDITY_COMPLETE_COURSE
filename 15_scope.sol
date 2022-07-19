@@ -5,10 +5,11 @@ pragma solidity 0.8.7;
 
 
 contract HelloWorld{
-
+    //state variables vs local variables
     //local variables will superceed state variables
-
-    //state variables
+    
+    
+    //state variables declared here
     uint a = 5;
 
     function sumTwoNumbers() public pure returns (uint){
