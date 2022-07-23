@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: MIT states that others can use your source code with respect to the MIT open-source license
 pragma solidity 0.8.7;
 
-contract HelloWorld{
+contract Structs{
 
     struct User {
         uint id;
@@ -15,17 +15,18 @@ contract HelloWorld{
     User[] usersList;
 
     
-    function addUser(string memory newName, address newAddress) public {
-        
-        //usersList.push(User(usersList.length, newName, newAddress));
+    function addUser(string memory newName) public {
+        //implicit
+        //usersList.push(User(usersList.length, newName, msg.sender));
         
         // key value mapping
-        //usersList.push(User({id: usersList.length, name: newName, walletAddress: newAddress}));
+        //explicit
+        //usersList.push(User({id: usersList.length, name: newName, walletAddress: msg.sender}));
         
         User memory newUser;
         newUser.id = usersList.length;
         newUser.name = newName;
-        newUser.walletAddress = newAddress;
+        newUser.walletAddress = msg.sender;
         usersList.push(newUser);
     }
 

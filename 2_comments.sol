@@ -2,7 +2,7 @@
 
 pragma solidity 0.8.11;
 
-contract HelloWorld{
+contract Comments{
 
     //single line comment
 

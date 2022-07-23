@@ -5,7 +5,7 @@ pragma solidity 0.8.7;
 
 //function group of reusable code with can be called in our program
 
-contract HelloWorld{
+contract Functions{
 
     //sintax
     //function functionName(parameterList) scope returns (typeData){

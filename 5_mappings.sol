@@ -3,24 +3,44 @@
 // SPDX-License-Identifier: MIT states that others can use your source code with respect to the MIT open-source license
 pragma solidity 0.8.7;
 
-contract HelloWorld{
+contract Mappings{
 
     //like a dictionary
     //sintax mapping(keyType => valueType)
     //keyType can be any type, including mapping or an array
     mapping(address => uint) balances;
 
-    function getBalance(address addressUser) public view returns (uint){
-        return balances[addressUser];
+    function deposit() external payable {
+        balances[msg.sender] = msg.value;
+    }
+    
+    function balanceOf() external view returns (uint){
+        return balances[msg.sender];
     }
 
-    function setBalance(address newUser, uint newBalance) public  {
-        balances[newUser] = newBalance;
-    }
-
-    function removeBalance(address addressUser) public {
+    function removeMyBalance() public {
         // Reset the value to the default value.
-        delete balances[addressUser];
+        delete balances[msg.sender];
+    }
+
+}
+
+
+//another example
+contract MappingsPoints{
+
+    mapping(address => uint[]) points;
+
+    function addPoints (uint task_points) external {
+        points[msg.sender].push(task_points);
+    }
+
+    function sumPoints () external view returns (uint) {
+        uint total =0;
+        for (uint i = 0; i < points[msg.sender].length ; i++ ) {
+            total += points[msg.sender][i];
+        }
+        return total;
     }
 
 }

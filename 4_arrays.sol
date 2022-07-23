@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: MIT states that others can use your source code with respect to the MIT open-source license
 pragma solidity 0.8.7;
 
-contract HelloWorld{
+contract Arrays{
 
     //array of many items
     uint[] balances;
@@ -21,9 +21,13 @@ contract HelloWorld{
     }
 
     function addName(string memory newName) public {
-        // Append to array
+        // Append to array in last place
         // This will increase the array length by 1.
         names.push(newName);
+    }
+
+    function updateName(string memory newName, uint position) public {
+        names[position] = newName;
     }
 
     function removeLastName () public {
@@ -40,6 +44,7 @@ contract HelloWorld{
         // Delete does not change the array length.
         // It resets the value at index to it's default value,
         // in this case ""
+        // length not change
         delete names[index];
     }
     

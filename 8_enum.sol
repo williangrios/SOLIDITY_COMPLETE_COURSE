@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: MIT states that others can use your source code with respect to the MIT open-source license
 pragma solidity 0.8.7;
 
-contract HelloWorld{
+contract Enums{
 
     enum RoleUser 
     {
@@ -18,18 +18,22 @@ contract HelloWorld{
 //        INSTRUCTOR,  //returns 2
 //        CLIENT    //returns 3
 
-    RoleUser roleUserActive;
+    mapping(address => RoleUser) users;
 
-    function getRole() public view returns(RoleUser){
-        return roleUserActive;
+    function addUser(RoleUser newRole) external {
+        users[msg.sender] = newRole;
     }
 
-    function setRole(RoleUser roleUser) public {
-        roleUserActive = roleUser;
+    function getRole() external view returns(RoleUser){
+        return users[msg.sender];
     }
 
-    function resetRole() public {
-        delete roleUserActive;
+    function updateRole(RoleUser newRoleUser) external {
+        users[msg.sender] = newRoleUser;
+    }
+
+    function resetRole() external {
+        delete users[msg.sender];
     }
 
 }

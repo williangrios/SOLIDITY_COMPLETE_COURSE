@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: MIT states that others can use your source code with respect to the MIT open-source license
 pragma solidity 0.8.7;
 
-contract HelloWorld{
+contract Immutables{
 
 // Immutable variables are like constants.
 // Values of immutable variables can be set inside

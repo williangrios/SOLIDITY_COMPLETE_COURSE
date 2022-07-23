@@ -4,7 +4,7 @@
 pragma solidity 0.8.7;
 
 
-contract HelloWorld{
+contract Scope{
     //state variables vs local variables
     //local variables will superceed state variables
     

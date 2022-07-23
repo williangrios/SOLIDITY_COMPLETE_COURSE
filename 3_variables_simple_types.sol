@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: MIT states that others can use your source code with respect to the MIT open-source license
 pragma solidity 0.8.7;
 
-contract HelloWorld{
+contract Variables{
 
     //three main types of variables
 
@@ -14,7 +14,8 @@ contract HelloWorld{
         //signed (keyword int) = 1, -3234, 412, -5423345, 23423, -523423
 
     //strings (keyword string) = "sequences of characters"
-
+        // \skip line
+        // \n skips a line
 
     //State variables - variables here (in this place) will be saved in blockchain
     //simple texts
@@ -51,9 +52,13 @@ contract HelloWorld{
     bool public canAccess = false;
 
     //bytes32
+    //bytes are the basic unit of measurement in computer processing
     //store any data up until 32 bytes, can be strings, uint etc
+    //usually saves computational force
     //default value = 0x0000000000000000000000000000000000000000000000000000000000000000
-    bytes32 public data = "asdçfoljalçsd";
+    bytes public data = 'You\'re a good man';
+
+    string public datas = "asdçfoljalçsd";
 
     //address
     //store wallet addresses

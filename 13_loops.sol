@@ -3,7 +3,7 @@
 pragma solidity 0.8.7;
 
 
-contract learnLoops{
+contract Loops{
 
     //Solidity supports for, while, and do while loops.
 
